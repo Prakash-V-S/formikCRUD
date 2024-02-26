@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ data }) => {
+const Card = ({ data ,getData }) => {
   const { book, author, id } = data;
   const { img: bookImg, title, about } = book;
   const { img: authorImg, name, pub } = author;

@@ -19,7 +19,7 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="row py-4 mx-2 justify-center">
-     {user.map((data)=>(<Card data={data}/>))}
+     {user.map((data)=>(<Card data={data} getData={getData}/>))}
     </div>
   );
 };

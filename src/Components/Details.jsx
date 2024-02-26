@@ -1,16 +1,28 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { axiosService } from "../Utilities/Apiservices";
 
 const Details = () => {
-  const { state } = useLocation();
+  const navigate = useNavigate();
+  const { state} = useLocation();
   const { data } = state;
   const { book, author } = data;
-  const { img : bookImg, title, pub, about, ISBN } = book;
+  const { img: bookImg, title, pub, about, ISBN } = book;
   const { name, birth, bio } = author;
 
-  const defaultBookImgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
-  const defaultAuthorImgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
-
+  const defaultBookImgUrl =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
+  const defaultAuthorImgUrl =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
+  const handleDelete = async (id) => {
+    var result = confirm("Are you sure you want to delete?");
+    if (result) {
+      let res = await axiosService.delete(`/users/${id}`);
+      if (res.status == 200) {
+        navigate("/dashboard");
+      }
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -23,7 +35,7 @@ const Details = () => {
           e.target.src = defaultBookImgUrl;
         }}
       ></img>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div className="flex flex-col space-y-4">
           <div>
@@ -64,9 +76,11 @@ const Details = () => {
           Edit
         </Link>
         <button
+        to="/dashboard"
           className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 mr-4 inline-block"
           onClick={() => {
             // Implement delete functionality
+            handleDelete(data.id);
             console.log("Delete button clicked");
           }}
         >
