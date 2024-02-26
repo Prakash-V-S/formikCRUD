@@ -7,21 +7,23 @@ const Card = ({ data }) => {
   const { img: authorImg, name, pub } = author;
 
   // Default images for book and author
-  const defaultBookImgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
-  const defaultAuthorImgUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
+  const defaultBookImgUrl =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
+  const defaultAuthorImgUrl =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
 
   return (
     <>
       <div
         className="col-12 col-md-6 col-lg-6 col-xl-6 flex justify-center card m-2 p-2 main-card"
-        style={{ maxWidth: "480px", height: " auto" }}
+        style={{ maxWidth: "480px", height: " 310px" }}
       >
         <Link to={`/dashboard/details/${id}`} state={{ data }}>
           <div className="row g-0 ">
             <div className="col-md-4 pt-2">
               <img
                 src={bookImg || defaultBookImgUrl}
-                className="img-fluid  rounded-start"
+                className=""
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = defaultBookImgUrl;
@@ -38,16 +40,17 @@ const Card = ({ data }) => {
               </div>
               <div className="flex items-center">
                 <img
-                  className="w-10 h-10 rounded-full mr-4"
+                  className="w-10 h-5 border rounded-full mr-4"
                   src={authorImg || defaultAuthorImgUrl}
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = defaultAuthorImgUrl; // Set default image if author image fails to load
+                    e.target.src = defaultAuthorImgUrl; 
                   }}
-                  alt={name || "Author Image"}
                 />
                 <div className="text-sm">
-                  <p className="text-gray-900 leading-none">{name || "Author Name"}</p>
+                  <p className="text-gray-900 leading-none">
+                    {name || "Author Name"}
+                  </p>
                   <p className="text-gray-600">{pub}</p>
                 </div>
               </div>

@@ -17,7 +17,7 @@ const Details = () => {
       <h1 className="text-3xl font-semibold text-gray-900">{title}</h1>
       <img
         src={bookImg || defaultBookImgUrl}
-        className="img-fluid  rounded-start"
+        className="img-fluid w-64 rounded-start"
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = defaultBookImgUrl;
