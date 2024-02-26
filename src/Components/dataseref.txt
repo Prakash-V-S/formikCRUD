@@ -1,0 +1,121 @@
+[
+  {
+    "book": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "ISBN": "9780743273565",
+      "pub": "1925-04-10",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/330px-The_Great_Gatsby_Cover_1925_Retouched.jpg",
+      "about": "Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan."
+    },
+    "author": {
+      "name": "Francis Scott Key Fitzgerald",
+      "birth": "1896-09-24",
+      "bio": "F. Scott Fitzgerald was an American novelist and short story writer, widely regarded as one of the greatest writers of the 20th century. He is best known for his novel 'The Great Gatsby' (1925), which has become a literary classic.",
+      "img": ""
+    },
+    "id": "1"
+  },
+  {
+    "book": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "ISBN": "9780061120084",
+      "pub": "1960-07-11",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg/330px-To_Kill_a_Mockingbird_%28first_edition_cover%29.jpg",
+      "about": "Set in the American South during the 1930s, the novel explores racial injustice and moral growth through the eyes of young Scout Finch."
+    },
+    "author": {
+      "name": "Nelle Harper Lee",
+      "birth": "1926-04-28",
+      "bio": "Harper Lee was an American novelist widely known for her 1960 Pulitzer Prize-winning novel 'To Kill a Mockingbird', which deals with the issues of racism and injustice in the American South. It remains a classic of modern American literature.",
+      "img": ""
+    },
+    "id": "2"
+  },
+  {
+    "book": {
+      "title": "1984",
+      "author": "George Orwell",
+      "ISBN": "9780451524935",
+      "pub": "1949-06-08",
+      "img": "https://upload.wikimedia.org/wikipedia/en/5/51/1984_first_edition_cover.jpg",
+      "about": "Set in a dystopian future, the novel follows Winston Smith as he grapples with oppression and surveillance in a totalitarian society."
+    },
+    "author": {
+      "name": "George Orwell",
+      "birth": "1903-06-25",
+      "bio": "George Orwell was an English novelist, essayist, journalist, and critic, known for his novels 'Animal Farm' (1945) and 'Nineteen Eighty-Four' (1949), which are profound critiques of totalitarianism.",
+      "img": ""
+    },
+    "id": "3"
+  },
+  {
+    "book": {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ISBN": "9780141439518",
+      "pub": "1813-01-28",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c3/1984first.jpg",
+      "about": "A classic romantic novel, 'Pride and Prejudice' follows the lives of the Bennet sisters as they navigate love, marriage, and social status in Regency-era England."
+    },
+    "author": {
+      "name": "Jane Austen",
+      "birth": "1775-12-16",
+      "bio": "Jane Austen was an English novelist known primarily for her six major novels, which interpret, critique and comment upon the British landed gentry at the end of the 18th century. Her most famous works include 'Pride and Prejudice' and 'Sense and Sensibility'.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Jane_Austen_1870.jpg"
+    },
+    "id": "4"
+  },
+  {
+    "book": {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "ISBN": "9780316769488",
+      "pub": "1951-07-16",
+      "img": "",
+      "about": "Narrated by the teenage protagonist Holden Caulfield, the novel explores themes of adolescence, alienation, and the search for identity."
+    },
+    "author": {
+      "name": "Jerome David Salinger",
+      "birth": "1919-01-01",
+      "bio": "J.D. Salinger was an American writer known for his novel 'The Catcher in the Rye' (1951), a coming-of-age story that has become a classic of modern literature.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/8/88/JD_Salinger.jpg"
+    },
+    "id": "5"
+  },
+  {
+    "book": {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ISBN": "9780345534835",
+      "pub": "1937-09-21",
+      "img": "https://upload.wikimedia.org/wikipedia/en/3/39/Hobbit_cover.JPG",
+      "about": "The prelude to 'The Lord of the Rings' trilogy, 'The Hobbit' follows Bilbo Baggins on a quest to reclaim the treasure guarded by the dragon Smaug."
+    },
+    "author": {
+      "name": "John Ronald Reuel Tolkien",
+      "birth": "1892-01-03",
+      "bio": "J.R.R. Tolkien was an English writer, poet, philologist, and academic, best known as the author of 'The Hobbit' and 'The Lord of the Rings'. His works have had a profound influence on the fantasy genre.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/2/29/Tolkien_1916.jpg"
+    },
+    "id": "6"
+  },
+  {
+    "book": {
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "ISBN": "9780486282114",
+      "pub": "1818-01-01",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Frankenstein%2C_1831.jpg",
+      "about": "Often considered the first science fiction novel, 'Frankenstein' tells the story of scientist Victor Frankenstein, who creates a sapient creature in an unorthodox scientific experiment. The novel explores themes of creation, morality, and humanity."
+    },
+    "author": {
+      "name": "Mary Wollstonecraft Shelley",
+      "birth": "1797-08-30",
+      "bio": "Mary Shelley was an English novelist, best known for her Gothic novel 'Frankenstein' (1818), which is considered one of the earliest examples of science fiction.",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mary_Shelley_1840.jpeg"
+    },
+    "id": "7"
+  }
+]
