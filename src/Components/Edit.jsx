@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -6,35 +6,67 @@ import Row from "react-bootstrap/Row";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { axiosService } from "../Utilities/Apiservices";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 function Create() {
   const navigate = useNavigate();
-  let formik = useFormik({
-    initialValues: {
-      book: {
-        title: "",
-        author: "",
-        ISBN: "",
-        pub: "",
-        img:'',
-        about: "",
-      },
-      author: {
-        name: "",
-        birth: "",
-        bio: "",
-        img: "",
-      },
+  const params = useParams();
+  const [initialValuesMap, setValues] = useState({
+    book: {
+      title: "",
+      ISBN: "",
+      pub: "",
+      img: "",
+      about: "",
     },
+    author: {
+      name: "",
+      birth: "",
+      bio: "",
+      img: "",
+    },
+  });
+  const getUserData = async () => {
+    let { id } = params;
+    try {
+      const rep = await axiosService.get(`/users/${id}`);
+      if (rep.status == 200) {
+        setValues({
+          book: {
+            title: rep.data.book.title,
+            ISBN: rep.data.book.ISBN,
+            pub: new Date(rep.data.book.pub).toISOString.split("T")[0],
+            img: rep.data.book.img,
+            about: rep.data.book.about,
+          },
+          author: {
+            name: rep.data.author.name,
+            birth: new Date(rep.data.book.birth).toISOString.split("T")[0],
+            bio: rep.data.author.bio,
+            img: rep.data.author.img,
+          },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(()=>{
+
+  })
+
+  let formik = useFormik({
+    initialValues: initialValuesMap,
     validationSchema: Yup.object().shape({
       book: Yup.object().shape({
         title: Yup.string().required("Title is Required"),
-        ISBN: Yup.string().required("ISBN number required"),
+        ISBN: Yup.string()
+          .required("ISBN number required")
+          .matches(/^\d{6}$/, "Enter a valid ISBN Number"),
         pub: Yup.date().required("Published date Required"),
         about: Yup.string().required("About Book is required"),
         img: Yup.string().required("Image URL is required"),
-
       }),
       author: Yup.object().shape({
         name: Yup.string().required("Author name is Required"),
@@ -43,10 +75,12 @@ function Create() {
         img: Yup.string().required("Image URL is required"),
       }),
     }),
+    enableReinitialize: true,
     onSubmit: async (values) => {
       try {
-        let res = await axiosService.post("/users", values);
-        if (res.status == 201) {
+        let {id} = params
+        let res = await axiosService.put(`users/${id}`, values);
+        if (res.status == 200) {
           navigate("/dashboard");
           console.log(res.data);
         }
@@ -55,6 +89,10 @@ function Create() {
       }
     },
   });
+    useEffect(()=>{
+    getUserData()
+  },[])
+
 
   return (
     <Form

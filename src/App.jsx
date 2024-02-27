@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <div className="flex flex-col min-h-screen bg-green-400">
+      <div className="flex flex-col min-h-screen bg-[#0fb9b1]">
         <NavBar />
         <div className="flex-grow">
           <Routes>

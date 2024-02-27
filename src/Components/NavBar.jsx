@@ -14,7 +14,7 @@ function NavBar() {
               src="https://th.bing.com/th/id/OIP.54s9jkp_mrvfjTraqjrk4AHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain"
               width="30"
               height="30"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top "
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
