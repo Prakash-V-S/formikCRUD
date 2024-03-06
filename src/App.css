@@ -70,7 +70,7 @@ html {
   animation-fill-mode:both;
   -webkit-animation-fill-mode:both;
 }
-.tg:hover  button {
+.tg button:hover   {
   animation:bounceEx3 1.5s ease;
   -webkit-animation:bounceEx3 1.5s ease;
   transform-origin:bottom;

@@ -12,7 +12,7 @@ const Card = ({ data }) => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiZV0WxURh4QRU50JJMkKrbIC2Enn77UUqOwKbRb8R-wopOA7Tm2M1jFuVthM3TDyvsWY&usqp=CAU";
 
   return (
-    <div className="col-6 col-md-4 col-lg-3 col-xl-2 m-1 w-96 mb-4 ">
+    <div className="col-6 col-md-4 col-lg-2 col-xl-2 m-1 w-96 mb-4 ">
       <div className="card h-100 border-0 main-card">
         <Link to={`/dashboard/details/${id}`} state={{ data }} className="text-decoration-none text-dark">
           <div className="card-body d-flex flex-column justify-content-between">
@@ -24,7 +24,7 @@ const Card = ({ data }) => {
                   e.target.onerror = null;
                   e.target.src = defaultBookImgUrl;
                 }}
-                style={{ height: "500px", objectFit: "cover" }} // Set a fixed height for the image
+                style={{ height: "500px", objectFit: "cover" }} 
                 alt={title || "Book Image"}
               />
               <h1 className="card-title mb-2 italic font-bold underline">{title || "Title Not Available"}</h1>

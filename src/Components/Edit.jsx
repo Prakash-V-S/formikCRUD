@@ -27,24 +27,30 @@ function Create() {
       img: "",
     },
   });
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
   const getUserData = async () => {
-    let { id } = params;
+    const { id } = params;
     try {
-      const rep = await axiosService.get(`/users/${id}`);
-      if (rep.status == 200) {
+      const response = await axiosService.get(`/users/${id}`);
+      if (response.status === 200) {
+        const { data } = response;
         setValues({
           book: {
-            title: rep.data.book.title,
-            ISBN: rep.data.book.ISBN,
-            pub: new Date(rep.data.book.pub).toISOString.split("T")[0],
-            img: rep.data.book.img,
-            about: rep.data.book.about,
+            title: data.book.title,
+            ISBN: data.book.ISBN,
+            pub: new Date(data.book.pub).toISOString().split("T")[0],
+            img: data.book.img,
+            about: data.book.about,
           },
           author: {
-            name: rep.data.author.name,
-            birth: new Date(rep.data.book.birth).toISOString.split("T")[0],
-            bio: rep.data.author.bio,
-            img: rep.data.author.img,
+            name: data.author.name,
+            birth: new Date(data.author.birth).toISOString().split("T")[0],
+            bio: data.author.bio,
+            img: data.author.img,
           },
         });
       }
@@ -52,18 +58,15 @@ function Create() {
       console.log(error);
     }
   };
-  useEffect(()=>{
 
-  })
-
-  let formik = useFormik({
+  const formik = useFormik({
     initialValues: initialValuesMap,
     validationSchema: Yup.object().shape({
       book: Yup.object().shape({
         title: Yup.string().required("Title is Required"),
         ISBN: Yup.string()
           .required("ISBN number required")
-          .matches(/^\d{6}$/, "Enter a valid ISBN Number"),
+          .matches(/^\d{13}$/, "Enter a valid 13 - Digit ISBN Number"),
         pub: Yup.date().required("Published date Required"),
         about: Yup.string().required("About Book is required"),
         img: Yup.string().required("Image URL is required"),
@@ -78,9 +81,9 @@ function Create() {
     enableReinitialize: true,
     onSubmit: async (values) => {
       try {
-        let {id} = params
-        let res = await axiosService.put(`users/${id}`, values);
-        if (res.status == 200) {
+        const { id } = params;
+        const res = await axiosService.put(`users/${id}`, values);
+        if (res.status === 200) {
           navigate("/dashboard");
           console.log(res.data);
         }
@@ -89,10 +92,6 @@ function Create() {
       }
     },
   });
-    useEffect(()=>{
-    getUserData()
-  },[])
-
 
   return (
     <Form
