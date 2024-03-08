@@ -11,13 +11,13 @@ function NavBar() {
     style={{}}>
       <Container className="mx-4">
       <Navbar.Brand href="#home">
-            <img
+            {/* <img
               src={'src/assets/55853709-stack-of-colored-books-the-logo-of-the-bookstore-the-book-icon-bookstore-or-library-the-book-on-the-removebg-preview (1).png'}
               width="50"
               height="50"
               className="d-inline-block align-top "
               alt="React Bootstrap logo"
-            />
+            /> */}
           </Navbar.Brand>
         <Navbar.Brand href="#">Public Library</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

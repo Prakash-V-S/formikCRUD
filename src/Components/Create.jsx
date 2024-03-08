@@ -17,7 +17,7 @@ function Create() {
         author: "",
         ISBN: "",
         pub: "",
-        img:'',
+        img: "",
         about: "",
       },
       author: {
@@ -30,11 +30,12 @@ function Create() {
     validationSchema: Yup.object().shape({
       book: Yup.object().shape({
         title: Yup.string().required("Title is Required"),
-        ISBN: Yup.string().required("ISBN number required"),
+        ISBN: Yup.string()
+          .required("ISBN number required")
+          .matches(/^\d{13}$/, "Enter a valid 13 - Digit ISBN Number"),
         pub: Yup.date().required("Published date Required"),
         about: Yup.string().required("About Book is required"),
         img: Yup.string().required("Image URL is required"),
-
       }),
       author: Yup.object().shape({
         name: Yup.string().required("Author name is Required"),
