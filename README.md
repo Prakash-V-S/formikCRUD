@@ -25,10 +25,11 @@ Throughout the development of this project, several key insights and lessons wer
 This project is built using the following technologies:
 
 - React
-- Formik
+- Formik Hook
 - HTML5
 - CSS3
 - Bootstrap
+- Tailwind CSS
 - JavaScript
 
 ## Tools Used
